@@ -16,3 +16,12 @@ def read_all(fname):
 			words = line.split('\t')
 			retval[words[0]] = words[1:]
 	return retval
+
+
+def label_reads(fname, label):
+	retval = dict()
+	with open(fname, 'r') as fin:
+		for line in fin:
+			words = line.split('\t')
+			retval[words[0]] = label
+	return retval

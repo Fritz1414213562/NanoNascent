@@ -8,6 +8,11 @@ import numpy as np
 import sys
 
 
+def run(args):
+    main(args.dataset, args.output)
+
+
+
 def CNN_LSTM(shape, filters, kernels, res_cycle, n_hid_unit, mask_value, activation, l2_norm_coef, nseed, pool_size, do_rate):
 
     def ResidualBlock(x, filter, kernel_size, cycle_num):
