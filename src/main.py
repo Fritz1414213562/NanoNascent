@@ -3,7 +3,7 @@ def main():
 	import fragmentation as fg
 	import classification as cl
 	import nn
-	import dataset_preparation.py as pr
+	import dataset_preparation as pr
 
 	parser = argparse.ArgumentParser(description = "Classification of biotinylated DNA fragments")
 	subparsers = parser.add_subparsers()
@@ -25,7 +25,7 @@ def main():
 	parser_cl.set_defaults(handler = cl.run)
 
 ## Preparation of dataset
-	parser_pr = subparsers.add_parser('preparation', help = "see `preparation -h`"))
+	parser_pr = subparsers.add_parser('preparation', help = "see `preparation -h`")
 	parser_pr.add_argument("--data_dir", '-d', required = True, nargs = '*')
 	parser_pr.add_argument("--label0", '-0', required = True)
 	parser_pr.add_argument("--label1", '-1', required = True)
