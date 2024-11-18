@@ -2,6 +2,7 @@ def main():
 	import argparse
 	import fragmentation as fg
 	import classification as cl
+	import nn
 
 	parser = argparse.ArgumentParser(description = "Classification of biotinylated DNA fragments")
 	subparsers = parser.add_subparsers()
@@ -21,6 +22,11 @@ def main():
 	parser_cl.add_argument("--alignment", '-a', required = True)
 	parser_cl.add_argument("--output", '-o', required = True)
 	parser_cl.set_defaults(handler = cl.run)
+
+	parser_nn = subparsers.add_parser('train', help = "see `train -h`")
+	parser_nn.add_argument("--train_set", '-t', required = True)
+	parser_nn.add_argument("--output", '-o', required = True)
+	parser_nn.set_defaults(handler = nn.run)
 
 	args = parser.parse_args()
 	if hasattr(args, 'handler'):
