@@ -1,0 +1,2 @@
+# Repli-pore-seq classifier
+This software is designed to judge incoporation of nucleotide analogue (e.g. biotin-dUTP) in single-stranded DNA measured by the Oxford Nanopore Technologies devices (e.g. MinION, PromethION). The input electric current signals are fit based on their stepwise change and converted into arrays of fitting paramters (current mean, standard deviation, and duration). The arrays are converted into a floating value within 0 to 1 by the neural network. The network consists of residual convolutional neural network and LSTM network.
